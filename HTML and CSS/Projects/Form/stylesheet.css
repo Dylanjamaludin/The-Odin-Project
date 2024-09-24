@@ -1,0 +1,41 @@
+:root
+{
+    --button-color:#596D48;
+    --input-border-color:#E5E7EB;
+
+
+}
+
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    margin:0;
+    padding:0;
+    display:flex;
+}
+@media (width<=250px)
+{
+    .hero-image
+    {
+        display: none;
+    }
+}
+.hero-image
+{
+    background: url("unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-position: center center;
+    flex: 1;
+    height:100vh;
+    min-width:0;
+}
+.form-content
+{
+    flex: 2 250px;
+    height:100vh;
+}
