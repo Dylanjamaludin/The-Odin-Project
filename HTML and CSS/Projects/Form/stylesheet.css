@@ -1,14 +1,70 @@
+@font-face {
+    font-family: Norse-Bold;
+    src: url("Norse-Bold.otf") format("opentype");
+}
 :root
 {
     --button-color:#596D48;
     --input-border-color:#E5E7EB;
+    --form-background: white;
+    --shadow-color:rgb(209, 209, 209);
+    --input-focus-color:rgb(99,130,221);
+    --input-invalid-color:rgba(185, 35, 38, 1);
 
-
+    font-size:px;
+    font-family: Helvetica, sans-serif
 }
 
-*
-{
+*{
     box-sizing: border-box;
+}
+body{
+    height:100vh;
+}
+
+.logo-placeholder
+{
+    background-color:rgba(0,0,0,0.4);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    margin-top:30vh;
+    margin-bottom:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    gap:0px;
+    width:100%;
+}
+
+.logo-placeholder>div>h1{
+    margin:0;
+    color:white;
+    text-align: center;
+    font-family: Norse-Bold;
+    font-size:clamp(3rem, calc(3rem + (4 - 3) * (100vw - 37.5rem)/ (75 - 37.5)), 4rem);
+    overflow:clip;
+    flex:1;
+    display: inline;
+}
+.logo-placeholder>div>img{
+    flex:1;
+    object-fit: contain;
+    height:clamp(5rem, calc(5rem + (7 - 5) * (100vw - 37.5rem)/ (75 - 37.5)), 7rem);
+}
+.logo-placeholder>div:first-child{
+    margin:0px;
+    padding:0px;
+    height:clamp(5rem, calc(5rem + (7 - 5) * (100vw - 37.5rem)/ (75 - 37.5)), 7rem);
+    /* width:5.39rem; */
+
+    align-self: center;
+}
+.logo-placeholder>div:last-child{
+    margin:0px;
+    padding:0px;
+    align-self: center;
 }
 body
 {
@@ -16,12 +72,54 @@ body
     padding:0;
     display:flex;
 }
-@media (width<=250px)
+fieldset
 {
-    .hero-image
-    {
-        display: none;
-    }
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border:none;
+    background-color: var(--form-background);
+    box-shadow: 2px 2px 5px rgb(209, 209, 209);
+    gap:20px 40px;
+    padding:20px;
+}
+fieldset div:first-child{
+    width:100%
+}
+.input-container
+{
+    flex-grow:1;
+    flex-basis: 33%;
+}
+.input-container>label
+{
+    font-family: Helvetica, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    width:100%;
+}
+.button-container
+{
+    padding:20px 20px;
+}
+.intro-text
+{
+    padding:40px 20px;
+}
+
+.intro-text>h3
+{
+    font-family: Helvetica, sans-serif;
+    color:black;
+    
+}
+form, fieldset
+{
+    margin:0;
+}
+.hidden-flex, .hidden-block
+{
+    display:none;
 }
 .hero-image
 {
@@ -36,6 +134,121 @@ body
 }
 .form-content
 {
-    flex: 2 250px;
-    height:100vh;
+    flex: 1 40%;
+    height: max(100vh,fit-content);
+    background-color:rgb(249,250,251);
+    overflow-y: scroll;
+
+}
+
+section>div
+{
+    padding: 10px;
+}
+button{
+    padding:10px 40px;
+    background-color:var(--button-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color:white;
+}
+button:hover
+{
+    background-color:#667e53;
+}
+button:active
+{
+    background-color:#415034;
+}
+input
+{
+    display:block;
+    width:100%;
+    background-color:var(--form-background);
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    height:calc(15px + 1rem);
+    padding:5px;
+}
+input:focus{
+    outline:0;
+}
+input:valid
+{
+    border-color:#8BC34A;
+    background-color: #8BC34A20 ;
+}
+input:invalid
+{
+    border-color: rgba(185, 35, 38);
+    background-color: rgba(185, 35, 38, .2);
+}
+input:placeholder-shown {
+    background-color: white;
+    border: 1px solid var(--input-border-color);
+}
+input:focus:valid{
+    border-color:#8BC34A;
+    box-shadow: 0 0 4px #8BC34A;
+    background-color: #8BC34A20 ;
+}
+input:focus:invalid{
+    border-color: rgba(185, 35, 38);
+    box-shadow: 0 0 4px rgba(185, 35, 38);
+    background-color: rgba(185, 35, 38, .2);
+}
+input::placeholder
+{
+    color:rgba(0, 0, 0, 0.295)
+}
+
+
+@media (width<=500px)
+{
+    .hero-image
+    {
+        display: none;
+    }
+    .form-content
+    {
+        background: url("unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+        
+    }
+    .hidden-flex
+    {
+        display:flex;
+    }
+    .hidden-block
+    {
+        display: block;
+    }
+    .logo-placeholder
+    {
+        background-color:rgba(0,0,0,0.4);
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    fieldset
+    {
+        background-color: rgba(255,255,255,0.92);
+        box-shadow: none;
+    }
+    .input-container
+    {
+        flex-basis: 100%;
+    }
+    .intro-text
+    {
+        background-color:rgba(249,250,251,.85);
+    }
+    .button-container
+    {
+        background-color:rgba(249,250,251,.85);
+    }
+    
 }

@@ -9,17 +9,53 @@
 </head>
 <body>
     <div class="hero-image">
-        <div>
-            
+        <div class="logo-placeholder">
+            <div class="image"><img src="odin-lined.png"></div>
+            <div><h1>ODIN</h1></div>
         </div>
     </div>
     <section class="form-content">
+        <div class="logo-placeholder hidden-flex">
+            <div class="image"><img src="odin-lined.png"></div>
+            <div><h1>ODIN</h1></div>
+        </div>
+        <div class="intro-text">
+            <h3>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</h3>
+            <h3>You <i>know</i> you want to.</h3>
+        </div>
         <form action="">
             <fieldset>
-                <form action="">
-
-                </form>
+                <div><h3>Let's do this!</h3></div>
+                <div class="input-container">
+                    <label class="input-label" for="first-name">FIRST NAME</label>
+                    <input required name="first-name" id="first-name" type="text" placeholder="John">
+                </div>
+                <div class="input-container">
+                    <label class="input-label" for="last-name">LAST NAME</label>
+                    <input required id="last-name" name="last-name" placeholder="Smith" type="text">
+                </div>
+                <div class="input-container">
+                    <label for="email">EMAIL</label>
+                    <input required name="email" placeholder="johnsmith@email.com" type="email">
+                </div>
+                <div class="input-container">
+                    <label for="phone-number">PHONE NUMBER</label>
+                    <input required placeholder="x-xxx-xxx-xxxx" type="text" name="phone-number" pattern="([0-1]{1})?-?[0-9]{3}-?[0-9]{3}-?[0-9]{4}">
+                </div>
+                <div class="input-container">
+                    <label for="password">PASSWORD</label>
+                    <input placeholder="•••••••••" required id="password" name="password" type="text">
+                </div>
+                <div class="input-container">
+                    <label for="password-confirm">CONFIRM PASSWORD</label>
+                    <input placeholder="•••••••••" required type="text" name="password-confirm" id="password">
+                </div>
+                
             </fieldset>
+            <div class="button-container">
+                <button type="submit">Create Account</button>
+                <p>Already have an account? <a href="">Log in</a></p>
+            </div>
         </form>
     </section>
 </body>
